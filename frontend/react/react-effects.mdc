@@ -1,0 +1,19 @@
+---
+description: useEffect 의존성, cleanup, 파생 상태·비동기
+globs: '**/*.{ts,tsx}'
+alwaysApply: false
+---
+
+# useEffect·동기화·비동기
+
+- `useEffect` 안에서 쓰는 **props·state·함수 등 컴포넌트 스코프 값**은 **의존성 배열에 빠짐없이** 넣는다. `react-hooks/exhaustive-deps`와 모순되지 않게 맞춘다.
+- 이벤트 구독·`setInterval`·`addEventListener`·외부 스토어 구독 등은 **cleanup**에서 해제·취소한다.
+- **이전 props/state로부터 바로 계산 가능한 값**은 `useEffect`로 state에 다시 넣지 않고, **렌더 중 계산**하거나 필요 시 `useMemo`로 메모한다.
+- 비동기 작업은 **언마운트 후 setState**를 플래그·`AbortController`·라이브러리 취소 등으로 막을 수 있으면 막는다.
+
+```ts
+useEffect(() => {
+  const id = window.setInterval(tick, 1000);
+  return () => window.clearInterval(id);
+}, [tick]);
+```

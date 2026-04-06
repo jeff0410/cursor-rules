@@ -1,0 +1,12 @@
+---
+description: 인터랙션·커서·레이블·대체 텍스트 등 a11y 기본
+globs: '**/*.tsx'
+alwaysApply: false
+---
+
+# 접근성(a11y) 기본
+
+- **클릭·토글·제출** 등 사용자 동작을 받는 요소는 `div`/`span`에 `onClick`만 붙이지 않고, **`button`** 또는 **`a`(내비게이션)** 등 **의미에 맞는 네이티브 요소**를 쓴다. 디자인상 `button`이 어렵다면 **`role`·키보드 이벤트·포커스**까지 갖춘 패턴을 쓰고, 단순 꾸밈이 아닌 경우에만 예외를 둔다.
+- **`button`**과 클릭으로 동작하는 **`a`**에는 **`cursor-pointer`**(Tailwind 등)를 붙여 **손가락 커서**로 클릭 가능함을 드러낸다. 전역 베이스 스타일로 통일해도 된다.
+- **`input`·`select`·`textarea`** 등에는 **`label`**과 연결한다. `htmlFor`와 `id`를 맞추거나, `aria-label` / `aria-labelledby`로 **이름을 부여**한다.
+- **정보를 전달하는 `img`**에는 적절한 **`alt`**를 둔다. 순수 장식용이면 `alt=""` 또는 `role="presentation"` 등 **의도에 맞는 처리**를 한다.

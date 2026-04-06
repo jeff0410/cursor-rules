@@ -1,0 +1,16 @@
+---
+description: null·undefined와 기본값, Optional chaining
+globs: '**/*.{ts,tsx}'
+alwaysApply: false
+---
+
+# null·undefined·기본값
+
+- **`0`·`""`·`false`가 유효한 값**일 수 있는 경우, 기본값을 줄 때 **`||` 대신 `??`(nullish coalescing)** 를 우선 고려한다. `||`는 위 값들을 건너뛴다.
+- **존재 여부만 확인**할 때는 `optional?.field`로 접근하고, 그다음 로직은 **좁혀진 타입**에 맞게 분기한다.
+- **optional과의 혼동을 줄이기 위해** API 경계·폼에서는 **`null`과 `undefined` 중 하나로 통일**하는 쪽을 선호한다. 기존 코드베이스 관례가 있으면 그에 맞춘다.
+
+```ts
+const pageSize = input.pageSize ?? 20;
+const name = user?.profile?.displayName;
+```

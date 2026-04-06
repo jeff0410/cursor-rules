@@ -1,0 +1,43 @@
+---
+description: Next.js App Router·서버 컴포넌트·데이터 패칭·성능 관례
+globs: '**/app/**/*.{ts,tsx}'
+alwaysApply: false
+---
+
+# Next.js (App Router)
+
+1. Default to Server Components.
+// - 기본적으로 서버 컴포넌트를 사용한다.
+
+2. Use "use client" only when strictly necessary.
+// - 꼭 필요한 경우에만 "use client"를 사용한다.
+
+3. Perform data fetching on the server when possible.
+// - 가능한 경우 데이터 요청은 서버에서 수행한다.
+
+4. Minimize unnecessary useEffect and client-side state.
+// - useEffect와 클라이언트 상태 사용을 최소화한다.
+
+5. Use Next.js App Router conventions.
+// - Next.js App Router 규칙을 따른다.
+
+6. Use Next.js built-in components (Image, Link, Script).
+// - Next.js 내장 컴포넌트를 사용한다.
+
+7. Implement loading and error states for async components.
+// - 비동기 컴포넌트에 loading 및 error 상태를 구현한다.
+
+8. Use dynamic imports for code splitting when needed.
+// - 필요할 때 dynamic import로 코드 분할을 수행한다.
+
+9. Optimize images and assets (lazy loading, size optimization).
+// - 이미지 및 자산을 최적화한다 (지연 로딩, 사이즈 최적화).
+
+10. Consider performance (LCP, CLS, FID).
+// - 성능 지표(LCP, CLS, FID)를 고려한다.
+
+11. Follow Next.js data fetching and rendering patterns.
+// - Next.js의 데이터 패칭 및 렌더링 패턴을 따른다.
+
+12. Ensure proper error handling and edge case handling.
+// - 에러 처리 및 예외 상황을 반드시 고려한다.
