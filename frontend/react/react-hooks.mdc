@@ -1,0 +1,17 @@
+---
+alwaysApply: true
+---
+
+# 파일명·훅 네이밍
+
+## 파일명
+
+- 새로 추가하거나 이름을 바꿀 때 **모든 소스 파일**은 **케밥케이스**를 쓴다.
+- 예: `user-profile.tsx`, `use-dashboard.ts`, `api-client.ts`
+- **금지**: `UserProfile.tsx`, `useDashboard.ts`, `api_client.ts` (신규·리네임 시)
+
+## 커스텀 훅
+
+- `useXxx` 로직은 **항상 별도 파일**로 분리한다.
+- 파일명은 **`use-` + 케밥케이스** + `.ts` : `use-dashboard.ts`, `use-side-menu-controller.ts`
+- 컴포넌트(`.tsx`) 안에 훅 본문을 길게 두지 않고, 해당 `use-*.ts`로 옮긴다.
