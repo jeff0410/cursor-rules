@@ -1,0 +1,14 @@
+---
+description: 스타일은 Tailwind CSS만 사용, styled-components 금지
+alwaysApply: true
+---
+
+# 스타일링 (Tailwind CSS)
+
+- UI·레이아웃·디자인 관련 스타일은 **반드시 Tailwind CSS**로만 적용한다.
+- **styled-components**(또는 `@emotion/styled` 등 CSS-in-JS styled API)는 **새로 추가하지 않는다.** 기존 코드도 원칙적으로 Tailwind로 통일한다.
+
+## 파일 수정 시 기존 styled 코드
+
+- 수정 대상 파일에 **styled-components(또는 동일 계열 styled 패턴)** 가 있으면, **먼저 사용자에게 해당 부분을 Tailwind로 바꿀지 여부를 묻는다.**
+- 사용자가 **수정을 요청한 경우에만** 해당 부분을 **Tailwind CSS**로 옮긴다. 요청이 없으면 styled 코드는 건드리지 않는다.
